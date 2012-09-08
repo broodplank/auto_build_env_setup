@@ -1,0 +1,55 @@
+ ----------------------------------------
+ - Automated Build Environment Setup    -
+ - version: 1.0                         -
+ -                                      -
+ - by broodplank1337 @ XDA              -
+ - www.broodplank.net                   - 
+ ----------------------------------------
+
+Description:
+I made a unix script that sets up an kernel developing environment fully automated. The script includes the good version of java (since the packages are not available trough apt-get) and the i9001 Kernel source (with adjusted makefile, ariesve_defconfig and the wifi drivers). This script may save you a lot of time, after the script is finished you will have a ready-to-mod kernel source. This script should be only used on a x64 machine (x86 will result in a corrupt environment)
+
+(total process make take upto 30 min, depending on your connection speed)
+
+(Please remind that I'm a unix noob, so If you find an error or missing package or w.e. please let me know!)
+Made it on Mint Linux, but it should work for Ubuntu also.
+
+
+What actions does it perform?
+- Installing Java
+- Getting required packages
+- Installing Repo
+- Cloning Prebuilt Repository (compiler)
+- Extracting I9001 Kernel Source
+- Copying ARIESVE_DEFCONFIG to source root (you can also pull config.gz from your phone "adb pull /proc/config.gz" then unzip it and copy the config file to .config (cp config .config)
+- Run xconfig from kernel source after setup (optionally)
+
+
+Installation Instructions:
+1. Open Terminal Emulator, enter the following commands:
+-- "mkdir -p ~/envsetup.sh"
+-- "cd ~/envsetup"
+-- "wget http://broodplank.net/files/auto_build_env_setup.tar.gz"
+-- "tar xvfz auto_build_env_setup.tar.gz"
+-- "chmod +x setup.sh"
+2. Now enter this command to start the script:
+-- "./setup.sh"
+3. After the script is done you will have a working android kernel development environment
+
+
+What to do with the kernel afterwards?
+- To configure: make xconfig
+- To clean the source: make clean
+- To compile (quick): make -j8
+- To compile (extended):
+-- make clean
+-- make prepare
+-- make modules_prepare
+-- make modules -j8
+-- sudo make modules_install
+-- make -j8
+
+the zImage will be placed in /arch/arm/boot/
+
+Adding things such as governors/io schedulers can be learned by browsing commits of other kernel developers (on github)
+
