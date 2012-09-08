@@ -27,7 +27,7 @@ What actions does it perform?
 
 Installation Instructions:
 1. Open Terminal Emulator, enter the following commands:
--- "mkdir -p ~/envsetup.sh"
+-- "mkdir -p ~/envsetup"
 -- "cd ~/envsetup"
 -- "wget http://broodplank.net/files/auto_build_env_setup.tar.gz"
 -- "tar xvfz auto_build_env_setup.tar.gz"
