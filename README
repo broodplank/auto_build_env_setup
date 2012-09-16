@@ -1,6 +1,6 @@
  ----------------------------------------
  - Automated Build Environment Setup    -
- - version: 1.0                         -
+ - version: 1.1                         -
  -                                      -
  - by broodplank1337 @ XDA              -
  - www.broodplank.net                   - 
@@ -35,19 +35,14 @@ Installation Instructions:
 2. Now enter this command to start the script:
 -- "./setup.sh"
 3. After the script is done you will have a working android kernel development environment
+4. You can find additional patches and scripts in the 'Patches & Addons' folder, use it!
 
 
-What to do with the kernel afterwards?
-- To configure: make xconfig
+What to do with the kernel afterwards? 
+- To configure: chmod +x xconfig && ./xconfig
 - To clean the source: make clean
 - To compile (quick): make -j8
-- To compile (extended):
--- make clean
--- make prepare
--- make modules_prepare
--- make modules -j8
--- sudo make modules_install
--- make -j8
+- To compile (extended): chmod +x compile && ./compile
 
 the zImage will be placed in /arch/arm/boot/
 

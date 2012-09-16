@@ -122,6 +122,13 @@ do
 		export PATH=$PATH:~/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/
 		make xconfig
 		clear
+		echo " "
+		echo "Be sure to check the Patches & Addons folder! It contains:"
+		echo " "
+		echo "- Update for kernel source, HKTW Patch and Localversion hack"
+		echo "- Fast xconfig script (./xconfig)"
+		echo "- Fast compile script (./compile)"
+		busybox sleep 10
 		exit
 		exit
 		;;
@@ -129,6 +136,13 @@ do
 		echo "Exiting..."
 		busybox sleep 1
 		clear
+		echo " "
+		echo "Be sure to check the Patches & Addons folder! It contains:"
+		echo " "
+		echo "- Update for kernel source, HKTW Patch and Localversion hack"
+		echo "- Fast xconfig script (./xconfig)"
+		echo "- Fast compile script (./compile)"
+		busybox sleep 10
 		exit
 		exit
 		;;
